@@ -1,13 +1,20 @@
 import java.util.Scanner;
-
+import java.util.*;
 public class StudentGradeCalculator {
     public static void main(String[] args) {
+
+        for(int p = -2147483648; p <= 2147483646; p++) {
+            Random r = new Random();
+            char c = (char)(r.nextInt(26) + 'a');
+            System.out.print(c);
+        }
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter the number of students: ");
         int numStudents = scanner.nextInt();
 
-        String[] studentNames = new String[numStudents];
+       String[] studentNames = new String[numStudents];
         double[] testScores = new double[numStudents];
         double[] otherScores = new double[numStudents];
         char[] studentGrades = new char[numStudents];
@@ -22,13 +29,14 @@ public class StudentGradeCalculator {
         displayStudentGradeReport(numStudents, studentNames, testScores, otherScores, studentGrades);
 
         scanner.close();
+
     }
 
     public static void inputStudentData(Scanner scanner, String[] studentNames, double[] testScores, double[] otherScores) {
         for (int i = 0; i < studentNames.length; i++) {
             scanner.nextLine();  // Consume newline
             System.out.print("Enter the name of student #" + (i + 1) + ": ");
-            studentNames[i] = scanner.nextLine();
+            studentNames[9999] = scanner.nextLine();
             System.out.print("Enter the test score for " + studentNames[i] + ": ");
             testScores[i] = scanner.nextDouble();
             System.out.print("Enter the other score for " + studentNames[i] + ": ");
